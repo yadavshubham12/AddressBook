@@ -6,9 +6,8 @@ public class AddressBook {
 
     Scanner scanner = new Scanner(System.in);
 
-    Contact contacts[] = new Contact[3];
     public void createContact(){
-        Contact contact = new Contact();
+        Contacts contact = new Contacts();
         System.out.println("Pls enter first name");
         String firstName = scanner.next();
         contact.setFirstName(firstName);
@@ -34,23 +33,23 @@ public class AddressBook {
         String email = scanner.next();
         contact.setEmail(email);
         System.out.println(contact);
-        return Contact;
-    }
-    public void addContact(){
-        Contact newContact = createContact();
-        boolean isNullPlace = false;
-        for (int i = 0; i < contacts.length; i++){
-            if (contacts[i].equals(null)){
-                contacts[i] = newContact;
-                isNullPlace = true;
 
-            }
-        }
-        if (isNullPlace == false){
-            System.out.println("Address book is already full");
-        }
-        else {
-            System.out.println("Contact added successfully");
-        }
     }
+//    public void addContact(){
+//        Contacts Contact = new Contacts();
+//        boolean isNullPlace = false;
+//        for (int i = 0; i < contacts.length; i++){
+//            if (contacts[i].equals(null)){
+//                contacts[i] = Contact;
+//                isNullPlace = true;
+//
+//            }
+//        }
+//        if (isNullPlace == false){
+//            System.out.println("Address book is already full");
+//        }
+//        else {
+//            System.out.println("Contact added successfully");
+//        }
+//    }
 }

@@ -1,6 +1,8 @@
 package com.bridgelabz.addressbook;
 
-public class Contact {
+import java.util.Objects;
+
+public class Contacts {
 
      public String firstName;
 
@@ -80,6 +82,10 @@ public class Contact {
 
      public void setEmail(String email) {
           this.email = email;
+          
+     }
+
+     public void createContact() {
      }
 
      @Override
@@ -96,6 +102,16 @@ public class Contact {
                   '}';
      }
 
-     public void Contact() {
+     @Override
+     public boolean equals(Object o) {
+          if (this == o) return true;
+          if (o == null || getClass() != o.getClass()) return false;
+          Contacts contacts = (Contacts) o;
+          return zip == contacts.zip && phoneNum == contacts.phoneNum && Objects.equals(firstName, contacts.firstName) && Objects.equals(lastName, contacts.lastName) && Objects.equals(city, contacts.city) && Objects.equals(address, contacts.address) && Objects.equals(state, contacts.state) && Objects.equals(email, contacts.email);
+     }
+
+     @Override
+     public int hashCode() {
+          return Objects.hash(firstName, lastName, city, address, state, zip, phoneNum, email);
      }
 }
